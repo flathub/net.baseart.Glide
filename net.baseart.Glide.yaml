@@ -1,84 +1,34 @@
 app-id: net.baseart.Glide
 runtime: org.gnome.Platform
-runtime-version: '3.30'
+runtime-version: '3.34'
 sdk: org.gnome.Sdk
 sdk-extensions:
 - org.freedesktop.Sdk.Extension.rust-stable
-- org.freedesktop.Platform.html5-codecs
 - org.freedesktop.Platform.VAAPI.Intel
 command: glide
 finish-args:
 - --device=dri
-- --share=network
-- --share=ipc
-- --device=dri
-- --socket=x11
-- --socket=wayland
-- --socket=pulseaudio
 - --filesystem=home
-- --talk-name=ca.desrt.dconf
-- --filesystem=xdg-run/dconf
-- --filesystem=~/.config/dconf:ro
-- --env=DCONF_USER_CONFIG_DIR=.config/dconf
+- --metadata=X-DConf=migrate-path=/net/baseart/Glide/
+- --share=ipc
+- --share=network
+- --socket=pulseaudio
+- --socket=wayland
+- --socket=x11
 build-options:
   append-path: /usr/lib/sdk/rust-stable/bin
   env:
     CARGO_HOME: /run/build/glide/cargo
 modules:
-- name: ffmpeg
-  sources:
-  - type: archive
-    url: https://ffmpeg.org/releases/ffmpeg-3.4.5.tar.gz
-    sha256: 18f80cc9ca322134ed40d25d7489af954fa519b4e7e6289b7084f1b0a1cdf472
-  config-opts:
-  - --enable-static
-  - --enable-pic
-  - --disable-avdevice
-  - --disable-postproc
-  - --disable-swscale
-  - --disable-programs
-  - --disable-ffplay
-  - --disable-ffprobe
-  - --disable-ffmpeg
-  - --disable-encoder=flac
-  - --disable-protocols
-  - --disable-devices
-  - --disable-network
-  - --disable-hwaccels
-  - --disable-dxva2
-  - --disable-vdpau
-  - --disable-filters
-  - --enable-filter=yadif
-  - --disable-doc
-  - --disable-d3d11va
-  - --disable-dxva2
-  - --disable-audiotoolbox
-  - --disable-videotoolbox
-  - --disable-vaapi
-  - --disable-crystalhd
-  - --disable-mediacodec
-  - --disable-nvenc
-  - --disable-mmal
-  - --disable-omx
-  - --disable-omx-rpi
-  - --disable-cuda
-  - --disable-cuvid
-  - --disable-libmfx
-  - --disable-libnpp
-  - --disable-iconv
-  - --disable-jni
-  - --disable-v4l2_m2m
-  - --enable-optimizations
 - name: gst-libav
-  buildsystem: meson
   builddir: true
   sources:
   - type: archive
-    url: https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.14.4.tar.xz
-    sha256: dfd78591901df7853eab7e56a86c34a1b03635da0d3d56b89aa577f1897865da
+    url: https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.16.2.tar.xz
+    sha256: c724f612700c15a933c7356fbeabb0bb9571fb5538f8b1b54d4d2d94188deef2
   config-opts:
-  - -Ddisable_gtkdoc=true
-  - --libdir=lib
+  - --disable-gtkdoc
+  - --with-system-libav=no
 - name: gstreamer-vaapi
   buildsystem: meson
   builddir: true
@@ -87,8 +37,8 @@ modules:
   - --libdir=lib
   sources:
   - type: archive
-    url: https://gstreamer.freedesktop.org/src/gstreamer-vaapi/gstreamer-vaapi-1.14.4.tar.xz
-    sha256: ce18dbfe961c6a8d31270231686075586bf7a7df62b778c8e7f5ec148251d0a3
+    url: https://gstreamer.freedesktop.org/src/gstreamer-vaapi/gstreamer-vaapi-1.16.2.tar.xz
+    sha256: 191de7b0ab64a85dd0875c990721e7be95518f60e2a9106beca162004ed7c601
 - name: glide
   buildsystem: meson
   sources:
