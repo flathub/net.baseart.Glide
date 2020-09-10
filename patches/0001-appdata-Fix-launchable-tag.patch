@@ -1,0 +1,26 @@
+From aafeb2b45d174bca9fd4690c63a8c9b7785ecc6c Mon Sep 17 00:00:00 2001
+From: Philippe Normand <phil@base-art.net>
+Date: Thu, 10 Sep 2020 09:26:12 +0100
+Subject: [PATCH] appdata: Fix launchable tag
+
+This should now be compliant with version 0.12 of the spec...
+---
+ data/net.baseart.Glide.appdata.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/net.baseart.Glide.appdata.xml b/data/net.baseart.Glide.appdata.xml
+index fae9946..7a8dd5a 100644
+--- a/data/net.baseart.Glide.appdata.xml
++++ b/data/net.baseart.Glide.appdata.xml
+@@ -2,7 +2,7 @@
+ <!-- Copyright 2018 Philippe Normand <phil_AT_base-art.net> -->
+ <component type="desktop">
+   <id>net.baseart.Glide</id>
+-  <launchable type="desktop">net.baseart.Glide</launchable>
++  <launchable type="desktop-id">net.baseart.Glide.desktop</launchable>
+   <metadata_license>CC-BY-3.0</metadata_license>
+   <project_license>MIT</project_license>
+   <name>Glide</name>
+-- 
+2.26.2
+
