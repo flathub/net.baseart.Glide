@@ -9,7 +9,8 @@ cleanup:
 command: glide
 finish-args:
 - --device=dri
-- --filesystem=home
+- --filesystem=xdg-download
+- --filesystem=xdg-videos
 - --metadata=X-DConf=migrate-path=/net/baseart/Glide/
 - --share=ipc
 - --share=network
