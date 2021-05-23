@@ -29,8 +29,8 @@ modules:
   builddir: true
   sources:
   - type: archive
-    url: https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.18.1.tar.xz
-    sha256: 79df8de21f284a105a5c1568527f8c559c583c85c0f2bd7bdb5b0372b8beecba
+    url: https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.18.4.tar.xz
+    sha256: 9aeec99b38e310817012aa2d1d76573b787af47f8a725a65b833880a094dfbc5
   config-opts:
     - -Dexamples=disabled
     - -Dbenchmarks=disabled
@@ -46,8 +46,8 @@ modules:
   builddir: true
   sources:
   - type: archive
-    url: https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.18.1.tar.xz
-    sha256: 1ba654d7de30f7284b4c7071b32f881b609733ce02ab6d9d9ea29386a036c641
+    url: https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.18.4.tar.xz
+    sha256: 29e53229a84d01d722f6f6db13087231cdf6113dd85c25746b9b58c3d68e8323
   config-opts:
     - -Dwrap_mode=nofallback
     - -Dcdparanoia=disabled
@@ -62,8 +62,8 @@ modules:
   builddir: true
   sources:
   - type: archive
-    url: https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.18.1.tar.xz
-    sha256: e210e91a5590ecb6accc9d06c949a58ca6897d8edb3b3d55828e424c624f626c
+    url: https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.18.4.tar.xz
+    sha256: b6e50e3a9bbcd56ee6ec71c33aa8332cc9c926b0c1fae995aac8b3040ebe39b0
   config-opts:
     - -Daalib=disabled
     - -Ddoc=disabled
@@ -80,8 +80,8 @@ modules:
   builddir: true
   sources:
   - type: archive
-    url: https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.18.1.tar.xz
-    sha256: c195978c85d97406c05eb9d43ac54b9ab35eda6ffdae32b3ed597b8f1743c1b2
+    url: https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.18.4.tar.xz
+    sha256: 74e806bc5595b18c70e9ca93571e27e79dfb808e5d2e7967afa952b52e99c85f
   config-opts:
     - -Dexamples=disabled
     - -Daom=disabled
@@ -211,8 +211,8 @@ modules:
   buildsystem: meson
   sources:
   - type: archive
-    url: https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.18.1.tar.xz
-    sha256: 39a717bc2613efbbba19df3cf5cacff0987471fc8281ba2c5dcdeaded79c2ed8
+    url: https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.18.4.tar.xz
+    sha256: 344a463badca216c2cef6ee36f9510c190862bdee48dc4591c0a430df7e8c396
   config-opts:
   - -Ddoc=disabled
 
@@ -221,8 +221,8 @@ modules:
   builddir: true
   sources:
   - type: archive
-    url: https://gstreamer.freedesktop.org/src/gstreamer-vaapi/gstreamer-vaapi-1.18.1.tar.xz
-    sha256: 400d3c42810b50b4566df03f37319a6bdd758f969560c40147e7d9a3b0e8a6ea
+    url: https://gstreamer.freedesktop.org/src/gstreamer-vaapi/gstreamer-vaapi-1.18.4.tar.xz
+    sha256: 92db98af86f3150d429c9ab17e88d2364f9c07a140c8f445ed739e8f10252aea
   config-opts:
   - -Ddoc=disabled
 
