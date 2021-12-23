@@ -29,8 +29,8 @@ modules:
   sources:
     - type: git
       url: https://git.ffmpeg.org/ffmpeg.git
-      tag: n4.3.1
-      commit: 6b6b9e593dd4d3aaf75f48d40a13ef03bdef9fdb
+      tag: n4.4.1
+      commit: 7e0d640edf6c3eee1816b105c2f7498c4f948e74
   config-opts:
     - --prefix="/app/"
     - --libdir="/app/lib"
