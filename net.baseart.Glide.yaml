@@ -80,5 +80,5 @@ modules:
   buildsystem: meson
   sources:
   - type: archive
-    url: https://github.com/philn/glide/releases/download/0.5.9/glide-0.5.9.tar.xz
-    sha256: e426e8b085a89e7dc384fc241bf161732735f083ddc4099342859c289951c6a3
+    url: https://github.com/philn/glide/releases/download/0.5.11/glide-0.5.11.tar.xz
+    sha256: 9d3824ce12b68504eeddda69a887277db000fc5d188fdf8eb8d2178ef8fc8354
