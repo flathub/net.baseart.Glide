@@ -1,6 +1,6 @@
 app-id: net.baseart.Glide
 runtime: org.gnome.Platform
-runtime-version: '44'
+runtime-version: '45'
 sdk: org.gnome.Sdk
 sdk-extensions:
 - org.freedesktop.Sdk.Extension.rust-stable
@@ -9,76 +9,23 @@ cleanup:
 command: glide
 finish-args:
 - --device=dri
-- --filesystem=xdg-download
-- --filesystem=xdg-videos
-- --metadata=X-DConf=migrate-path=/net/baseart/Glide/
+- --filesystem=xdg-download:ro
+- --filesystem=xdg-videos:ro
+- --filesystem=xdg-music:ro
 - --share=ipc
 - --share=network
+- --socket=fallback-x11
 - --socket=pulseaudio
 - --socket=wayland
-- --socket=x11
-- --env=GST_VAAPI_ALL_DRIVERS=1
-- --env=LIBVA_DRIVER_NAME=iHD
+- --env=GST_PLUGIN_FEATURE_RANK=vaav1dec:MAX,vah264dec:MAX,vah265dec:MAX,vavp9dec:MAX
 build-options:
   append-path: /usr/lib/sdk/rust-stable/bin
   env:
     CARGO_HOME: /run/build/glide/cargo
 modules:
-- name: ffmpeg
-  builddir: true
-  sources:
-    - type: git
-      url: https://git.ffmpeg.org/ffmpeg.git
-      tag: n4.4.1
-      commit: 7e0d640edf6c3eee1816b105c2f7498c4f948e74
-  config-opts:
-    - --prefix="/app/"
-    - --libdir="/app/lib"
-    - --disable-doc
-    - --disable-static
-    - --enable-optimizations
-    - --enable-shared
-    - --disable-everything
-    - --disable-ffplay
-    - --disable-ffprobe
-    - --enable-gnutls
-    - --enable-libaom
-    - --enable-libdav1d
-    - --enable-libfdk-aac
-    - --enable-libmp3lame
-    - --enable-libfontconfig
-    - --enable-libfreetype
-    - --enable-libopenh264
-    - --enable-libopus
-    - --enable-libpulse
-    - --enable-libspeex
-    - --enable-libtheora
-    - --enable-libvorbis
-    - --enable-libvpx
-    - --enable-libwebp
-    - --enable-openal
-    - --enable-opengl
-    - --enable-decoder=ac3,eac3,alac,flac,g723_1,g729,libfdk_aac,libopus,mp2,mp3,m4a,pcm_alaw,pcm_mulaw,pcm_f32le,pcm_s16be,pcm_s24be,pcm_s16le,pcm_s24le,pcm_s32le,pcm_u8,tta,vorbis,wavpack
-    - --enable-decoder=ass,ffv1,libaom_av1,libdav1d,libopenh264,libvpx_vp8,libvpx_vp9,rawvideo,theora,vp8,vp9,flv,hevc,h263,h264,mpeg2video,mpeg4,msmpeg4,msmpeg4v1,msmpeg4v2,msmpeg4v3,vp6,vp6a,vp6f
-    - --enable-decoder=gif,png,tiff,webp
-    - --enable-parser=aac,ac3,flac,mpegaudio,mpeg4video,opus,vp3,vp8,vorbis,hevc,h264
-    - --enable-demuxer=aac,ac3,ass,flac,gif,matroska,mov,mp3,mpegvideo,ogg,wav
-    - --enable-filter=crop,scale
-    - --enable-protocol=file 
-
-- name: gst-libav
-  builddir: true
-  buildsystem: meson
-  sources:
-  - type: archive
-    url: https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.20.5.tar.xz
-    sha256: b152e3cc49d014899f53c39d8a6224a44e1399b4cf76aa5f9a903fdf9793c3cc
-  config-opts:
-  - -Ddoc=disabled
-
 - name: glide
   buildsystem: meson
   sources:
   - type: archive
-    url: https://github.com/philn/glide/releases/download/0.5.11/glide-0.5.11.tar.xz
-    sha256: 9d3824ce12b68504eeddda69a887277db000fc5d188fdf8eb8d2178ef8fc8354
+    url: https://github.com/philn/glide/releases/download/0.6.0/glide-0.6.0.tar.xz
+    sha256: b764217bb0a0192f12055b855b15dcfbb832590084f92f81ac318558dd27d8a0
