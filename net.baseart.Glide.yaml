@@ -81,3 +81,8 @@ modules:
   - type: archive
     url: https://github.com/philn/glide/releases/download/0.6.0/glide-0.6.0.tar.xz
     sha256: b764217bb0a0192f12055b855b15dcfbb832590084f92f81ac318558dd27d8a0
+    x-checker-data:
+      type: json
+      url: https://api.github.com/repos/philn/glide/releases/latest
+      version-query: '.tag_name | sub("^glide-"; "")' 
+      url-query: '.assets[] | select(.name=="glide-" + $version + ".tar.xz") | .browser_download_url'
