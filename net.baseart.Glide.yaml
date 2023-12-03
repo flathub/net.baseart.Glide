@@ -17,7 +17,6 @@ finish-args:
   - --socket=pulseaudio
   - --socket=wayland
   - --env=GST_PLUGIN_FEATURE_RANK=vaav1dec:MAX,vah264dec:MAX,vah265dec:MAX,vavp9dec:MAX
-  - --env=GST_PLAY_USE_PLAYBIN3=1
 build-options:
   append-path: /usr/lib/sdk/rust-stable/bin
   env:
