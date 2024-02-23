@@ -28,7 +28,7 @@ modules:
       - type: git
         url: https://git.ffmpeg.org/ffmpeg.git
         branch: release/6.0
-        commit: b991129f8317393000717cf7e3d780542349da53
+        commit: 511b8444232376db4b03edb4306a3c18995f0576
     config-opts:
       - --prefix="/app/"
       - --libdir="/app/lib"
@@ -78,8 +78,8 @@ modules:
     buildsystem: meson
     sources:
       - type: archive
-        url: https://github.com/philn/glide/releases/download/0.6.1/glide-0.6.1.tar.xz
-        sha256: 0b8c807429629ff73c004fb6cba17d8cc6331471290370ba88a530d191f36b27
+        url: https://github.com/philn/glide/releases/download/0.6.2/glide-0.6.2.tar.xz
+        sha256: 8d8e350043c0e9633667b6ffa62bcf7fea96ea8b3a8d6c9bde85702f2b634ccd
         x-checker-data:
           type: json
           url: https://api.github.com/repos/philn/glide/releases/latest
