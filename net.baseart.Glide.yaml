@@ -86,3 +86,5 @@ modules:
           version-query: .tag_name | sub("^glide-"; "")
           url-query: .assets[] | select(.name=="glide-" + $version + ".tar.xz") |
             .browser_download_url
+      - type: patch
+        path: 0001-metainfo-Add-branding-colors.patch
