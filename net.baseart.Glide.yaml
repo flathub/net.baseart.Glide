@@ -16,7 +16,6 @@ finish-args:
   - --socket=fallback-x11
   - --socket=pulseaudio
   - --socket=wayland
-  - --env=GST_PLUGIN_FEATURE_RANK=vaav1dec:MAX,vah264dec:MAX,vah265dec:MAX,vavp9dec:MAX
 build-options:
   append-path: /usr/lib/sdk/rust-stable/bin
   env:
@@ -64,15 +63,26 @@ modules:
       - --enable-filter=crop,scale
       - --enable-protocol=file
 
-  - name: gst-libav
+  - name: gstreamer
     builddir: true
     buildsystem: meson
     sources:
-      - type: archive
-        url: https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.22.5.tar.xz
-        sha256: 8583f0c1f4fcb01eed11fa1e3c21126543a8bd739ed4fc1db31f756a5ab01d9a
+      - type: git
+        url: https://gitlab.freedesktop.org/gstreamer/gstreamer
+        tag: 1.24.0
+        disable-submodules: true
     config-opts:
       - -Ddoc=disabled
+      - -Dtests=disabled
+      - -Ddevtools=disabled
+      - -Dges=disabled
+      - -Drtsp_server=disabled
+      - -Dgst-examples=disabled
+      - -Dpython=disabled
+      - -Dwebrtc=disabled
+      - -Dgpl=enabled
+      - -Dgst-plugins-ugly:gpl=enabled
+      - -Dgst-plugins-bad:gpl=enabled
 
   - name: glide
     buildsystem: meson
