@@ -88,13 +88,11 @@ modules:
     buildsystem: meson
     sources:
       - type: archive
-        url: https://github.com/philn/glide/releases/download/0.6.2/glide-0.6.2.tar.xz
-        sha256: 8d8e350043c0e9633667b6ffa62bcf7fea96ea8b3a8d6c9bde85702f2b634ccd
+        url: https://github.com/philn/glide/releases/download/0.6.3/glide-0.6.3.tar.xz
+        sha256: 94cbc61f52e2e46967dce1046ee5cec6269dea0323f1d7ffc4ec71f3a01960aa
         x-checker-data:
           type: json
           url: https://api.github.com/repos/philn/glide/releases/latest
           version-query: .tag_name | sub("^glide-"; "")
           url-query: .assets[] | select(.name=="glide-" + $version + ".tar.xz") |
             .browser_download_url
-      - type: patch
-        path: 0001-metainfo-Add-branding-colors.patch
