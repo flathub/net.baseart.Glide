@@ -27,7 +27,7 @@ modules:
       - type: git
         url: https://git.ffmpeg.org/ffmpeg.git
         branch: release/6.0
-        commit: 511b8444232376db4b03edb4306a3c18995f0576
+        commit: cd49ee45ba4d081d870747873e591162dcf93ad7
     config-opts:
       - --prefix="/app/"
       - --libdir="/app/lib"
