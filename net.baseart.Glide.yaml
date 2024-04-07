@@ -21,6 +21,18 @@ build-options:
   env:
     CARGO_HOME: /run/build/glide/cargo
 modules:
+  - name: libass
+    config-opts:
+      - --enable-shared
+      - --disable-static
+    sources:
+      - type: git
+        url: https://github.com/libass/libass.git
+        tag: 0.17.1
+      - type: script
+        commands:
+          - autoreconf -fiv
+        dest-filename: autogen.sh
   - name: ffmpeg
     builddir: true
     sources:
