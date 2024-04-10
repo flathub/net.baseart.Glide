@@ -80,7 +80,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.freedesktop.org/gstreamer/gstreamer
-        tag: 1.24.1
+        tag: 1.24.2
         disable-submodules: true
     config-opts:
       - -Ddoc=disabled
