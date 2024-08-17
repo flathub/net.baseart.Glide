@@ -1,0 +1,25 @@
+From 32396dd5fd46e1f4abf1bc237997e0632ab9555c Mon Sep 17 00:00:00 2001
+From: Philippe Normand <phil@base-art.net>
+Date: Sat, 17 Aug 2024 16:52:18 +0100
+Subject: [PATCH] cargo-build: Enable DMABuf support
+
+---
+ build-aux/cargo-build.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/build-aux/cargo-build.py b/build-aux/cargo-build.py
+index 518d5aa..4679a50 100755
+--- a/build-aux/cargo-build.py
++++ b/build-aux/cargo-build.py
+@@ -15,7 +15,7 @@ def main():
+     args = parser.parse_args()
+ 
+     cmd = ['cargo', '--offline', 'build', '--manifest-path', os.path.join(args.srcdir, 'Cargo.toml'),
+-           '--target-dir', args.builddir, '--release', '--features', 'wayland,x11egl,x11glx']
++           '--target-dir', args.builddir, '--release', '--features', 'dmabuf,wayland,x11egl,x11glx']
+     subprocess.run(cmd)
+     shutil.copy2(os.path.join(args.builddir, 'release', args.project_name), os.path.join(args.outdir, args.project_name))
+     return 0
+-- 
+2.46.0
+
