@@ -101,11 +101,5 @@ modules:
       - type: archive
         url: https://github.com/philn/glide/releases/download/0.6.4/glide-0.6.4.tar.xz
         sha256: 10c661317ac21557749613f9417cdbb8e82106f8a043f512162c6007198fdeec
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/philn/glide/releases/latest
-          version-query: .tag_name | sub("^glide-"; "")
-          url-query: .assets[] | select(.name=="glide-" + $version + ".tar.xz") |
-            .browser_download_url
       - type: patch
         path: 0001-cargo-build-Enable-DMABuf-support.patch
